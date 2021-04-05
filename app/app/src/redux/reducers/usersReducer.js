@@ -1,6 +1,6 @@
 import { findAllInRenderedTree } from 'react-dom/test-utils';
-import { ADD_USER } from '../actionTypes';
-import { EDIT_USER } from '../actionTypes';
+import { ADD_USER } from './actionTypes';
+import { EDIT_USER } from './actionTypes';
 
 const initialState = { users: [] }
 

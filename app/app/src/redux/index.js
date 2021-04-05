@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import usersReducer from './employees/employeesReducer';
-import imagesReducer from './employees/employeesReducer';
-import commentsReducer from './employees/employeesReducer';
+import usersReducer from './reducers/usersReducer';
+import imagesReducer from './reducers/imagesReducer';
+import commentsReducer from './reducers/commentsReducer';
 
-export default combineReducers({employeesReducer})
+export default combineReducers({usersReducer,imagesReducer,commentsReducer})

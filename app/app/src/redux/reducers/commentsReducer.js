@@ -1,6 +1,6 @@
 import { findAllInRenderedTree } from 'react-dom/test-utils';
-import { ADD_COMMENT } from '../actionTypes';
-import { EDIT_COMMENT } from '../actionTypes';
+import { ADD_COMMENT } from './actionTypes';
+import { EDIT_COMMENT } from './actionTypes';
 
 const initialState = { comments: [] }
 

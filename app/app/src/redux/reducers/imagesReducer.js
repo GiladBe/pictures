@@ -1,6 +1,6 @@
 import { findAllInRenderedTree } from 'react-dom/test-utils';
-import { ADD_IMAGE } from '../actionTypes';
-import { EDIT_IMAGE } from '../actionTypes';
+import { ADD_IMAGE } from './actionTypes';
+import { DELETE_IMAGE } from './actionTypes';
 
 const initialState = { images: [] }
 
