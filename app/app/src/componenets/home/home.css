@@ -1,0 +1,9 @@
+.formHome {
+    width: 70%;
+    margin: 0% 30%;
+    padding: 1%;
+}
+
+.formHome__input, .formHome__submit {
+    margin-left: 2%;
+}

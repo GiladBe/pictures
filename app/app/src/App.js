@@ -1,8 +1,4 @@
-import './App.css';
 import React from "react";
-import Home from './componenets/home/home'
-import Image from './componenets/image/image'
-import User from './componenets/user/user'
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,12 +6,21 @@ import {
   Link
 } from "react-router-dom";
 
+//PAGES
+import Home from './componenets/home/home'
+import Image from './componenets/image/image'
+import User from './componenets/user/user'
+
+
+//CSS
+import './App.css';
+
 export default function App() {
   return (
     <Router>
       <div>
         <nav>
-          <ul>
+          <ul className="listMenu d-flex justify-content-center border">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -28,8 +33,6 @@ export default function App() {
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/image">
             <Image />

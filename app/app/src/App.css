@@ -1,0 +1,8 @@
+.listMenu {
+    list-style: none;
+    padding: 0.5% 0%;
+}
+
+.listMenu > li {
+    padding: 0% 7%;
+}
