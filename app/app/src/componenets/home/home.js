@@ -30,19 +30,18 @@ function Home() {
                 isUserExist = true;
                 console.log(` userName ${user.userName} is already used`)
                 setUserExist(` username already in use`) 
-                
-                
             }
             
         });
         if(!isUserExist){
             dispatch(addUser(e.target.userName.value))
             dispatch(addImage(e.target.url.value,e.target.userName.value))
-            console.log(images.find(image=>image.userName===e.target.userName.value))
-            
             console.log(isUserExist)
             setUserExist(``)
+            console.log(users)
+           
         }
+        
      
         
     }
