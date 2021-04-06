@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addImage } from '../../redux/reducers/actions/imagesActions';
@@ -13,21 +13,40 @@ import './home.css'
 function Home() {
     const dispatch = useDispatch();
     const users = useSelector(state => state.usersReducer.users)
+    const images = useSelector(state => state.imagesReducer.images)
+    const [userExist,setUserExist]=useState('')
+    // let userExist = ` `
     console.log(users)
+    console.log(images)
+
 
     function handleSubmit(e) {
         e.preventDefault()
-
-        dispatch(addUser(e.target.userName.value))
-        dispatch(addImage(e.target.url.value))
-
-
+        let isUserExist=false
+        console.log(isUserExist)
+        
+        users.forEach(user => {
+            if(user.userName===e.target.userName.value){
+                isUserExist = true;
+                console.log(` userName ${user.userName} is already used`)
+                setUserExist(` username already in use`) 
+                
+                
+            }
+            
+        });
+        if(!isUserExist){
+            dispatch(addUser(e.target.userName.value))
+            dispatch(addImage(e.target.url.value,e.target.userName.value))
+            console.log(images.find(image=>image.userName===e.target.userName.value))
+            
+            console.log(isUserExist)
+            setUserExist(``)
+        }
+     
+        
     }
 
-    //  function renderUsers(){
-    //      const users = useSelector(state=>state)
-    //      console.log(users)
-    //  }
 
     return (
         <div className="main">
@@ -35,16 +54,9 @@ function Home() {
                 <input id='userName' placeholder='Enter Username' type="text" className="formHome__input" />
                 <input id='url' placeholder='Image Url' type='url' className="formHome__input" />
                 <input type='submit' className="formHome__submit" />
+                <p>{userExist}</p>
             </form>
-
-            {/* <div className='container'>
-                <div><img src="" /><p>NAME</p></div>
-                <div><img src="" /><p>NAME</p></div>
-                <div><img src="" /><p>NAME</p></div>
-                <div><img src="" /><p>NAME</p></div>
-                <div><img src="" /><p>NAME</p></div>
-                <div><img src="" /><p>NAME</p></div>
-            </div> */}
+            {users.map((user)=><p key={user.id}> {user.userName}  </p>)}
         </div>
     )
 }

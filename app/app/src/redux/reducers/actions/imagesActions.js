@@ -1,10 +1,11 @@
 import {ADD_IMAGE,DELETE_IMAGE} from '../actionTypes';
 
-export const addImage = (imageUrl,id) => ({
+export const addImage = (imageUrl,userName) => ({
     type: ADD_IMAGE,
     payload: {
+        userName,
+        id:  (new Date()).getTime(),
         imageUrl,
-        id: id + (new Date()).getTime(),
     }
 })
 
